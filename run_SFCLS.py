@@ -23,8 +23,8 @@ else:
 result_path = todays_results + "/"
 
 # experiment parameters
-lam = 3e-7                           # weight of LASSO regularization
-K = 20                               # number of mixtures to test
+lam = 1e-7                           # weight of LASSO regularization
+K = 1                               # number of mixtures to test
 gauss_dev = 2.5e-5                     # standard deviation of gaussian noise added to mixture
 min_endmemb = 0.01                   # threshold to determine true endmember abundance present
 thresh = 0.01                       # theshold to determine predicted endmember abundance presence
@@ -68,35 +68,35 @@ for i in range(K):
                     "recall": recall,
                     "K": K})
 
-#     # plot true spectra, noisy spectra, and reconstructed spectra
-#     plt.figure(figsize=[11, 7.5])
-#     plt.subplot(211)
-#     plt.title("Signal Reconstruction")
-#     original = np.ma.array(mixture.spectra)
-#     noisy = np.ma.array(mixture_noisy.spectra)
-#     recon = np.ma.array(np.matmul(endmembs.spectra, x))
-#     original[26] = np.ma.masked
-#     noisy[26] = np.ma.masked
-#     recon[26] = np.ma.masked
-#     plt.plot(endmembs.bands, original, label="original")
-#     plt.plot(endmembs.bands, noisy, label="noisy")
-#     plt.plot(endmembs.bands, recon, "--", label="reconstructed")
-#     plt.xlabel("wavenumber")
-#     plt.ylabel("emissivity")
-#     plt.legend()
-#
-#     # plot true mixture proportions and predicted proportions
-#     plt.subplot(212)
-#     plt.title("Endmember Proportions")
-#     ind = np.arange(M)
-#     width = 0.35
-#     plt.bar(ind, mixture.proportions, width, label="true proportions")
-#     plt.bar(ind + width, x, width, label="prediction")
-#     plt.xticks(ind + width / 2, endmembs.text_labels, rotation=90)
-#
-#     plt.subplots_adjust(bottom=.16, hspace=.4)
-#     plt.legend()
-# plt.show()
+    # plot true spectra, noisy spectra, and reconstructed spectra
+    plt.figure(figsize=[11, 7.5])
+    plt.subplot(211)
+    plt.title("Signal Reconstruction")
+    original = np.ma.array(mixture.spectra)
+    noisy = np.ma.array(mixture_noisy.spectra)
+    recon = np.ma.array(np.matmul(endmembs.spectra, x))
+    original[26] = np.ma.masked
+    noisy[26] = np.ma.masked
+    recon[26] = np.ma.masked
+    plt.plot(endmembs.bands, original, label="original")
+    plt.plot(endmembs.bands, noisy, label="noisy")
+    plt.plot(endmembs.bands, recon, "--", label="reconstructed")
+    plt.xlabel("wavenumber")
+    plt.ylabel("emissivity")
+    plt.legend()
+
+    # plot true mixture proportions and predicted proportions
+    plt.subplot(212)
+    plt.title("Endmember Proportions")
+    ind = np.arange(M)
+    width = 0.35
+    plt.bar(ind, mixture.proportions, width, label="true proportions")
+    plt.bar(ind + width, x, width, label="prediction")
+    plt.xticks(ind + width / 2, endmembs.text_labels, rotation=90)
+
+    plt.subplots_adjust(bottom=.16, hspace=.4)
+    plt.legend()
+plt.show()
 
 
 #save metrics
