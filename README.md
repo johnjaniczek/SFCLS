@@ -64,7 +64,7 @@ Instructions to use spectral unmixing algorithms in your own experiments
     - surface: list or range of surface endmember indices, according to endmember library A Only used if there are atmospheric endmembers which have different constraints/regularization. 
     - lam_atm: float64, weight of atmospheric L2 norm regularization. Defaults to 0. Only needed if there are atmospheric endmembers in library.
     - maxiter: int, maximum number of iterations of scipy optimizers
-    - ftol: Tolerance of optimizer exit criteria. It is a threshold for the relative change in the objective function between iterations. When the objective function changes by an amount less than ftol, the optimization is complete.
+    - ftol: float64, Tolerance of optimizer exit criteria. It is a threshold for the relative change in the objective function between iterations. When the objective function changes by an amount less than ftol, the optimization is complete.
 
 
 _____________________________________________________________
