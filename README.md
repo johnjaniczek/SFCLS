@@ -57,7 +57,7 @@ Instructions to use spectral unmixing algorithms in your own experiments
     - returns x : numpy ndarray of size N, each element of x is the abundance
                 of the endmember corresponding to the columns in A
     
-    - valid kwargs for each function are
+    valid kwargs for each function are
     
     - lam : float64, weight of regularization (inftyNorm, LASSO, pNorm)
     - p : float64, order of p_norm recomended 0.9<p<1 (p_norm)
