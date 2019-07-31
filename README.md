@@ -1,7 +1,7 @@
 # SFCLS
 Sparse Fully Constrained Least Squares for spectral unmixing
 
-It is shown in associated paper that Lp norm promotes sparsity in spectral unmixing and improves results over other sparsiy promoting regularization terms.
+It is shown in associated paper that Lp norm promotes sparsity in spectral unmixing and improves results over other sparsity promoting regularization terms. LASSO and reciprocal L_infty are also considered, although they do not have as high of performance. 
 
 Below is a description of the file struction, instructions to use the unmixing algorithms in your own experiments, and instructions to reproduce results shown in the paper.
 ____________________________________________________________
