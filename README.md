@@ -33,21 +33,23 @@ ____________________________________________________________
 Instructions to use spectral unmixing algorithms in your own experiments
 
 1. Install dependencies:
-
-	- pip install numpy scipy
-
+	```
+	pip install numpy scipy
+	```
 2. Place *unmix.py* file in your project folder or path
 
 3. Import spectral unmixing function with the following line of code
 
-    - from unmix import pNorm_unmix
-    
+	``` python
+	from unmix import pNorm_unmix
+	```
     - OR inftyNorm_unmix, LASSO_unmix, FCLS_unmix
     
 4. Call the function with the following line of code (and additional kwargs)
 
-    - x = pNorm_unmix(A, b, *kwargs)
-    
+	```python
+	x = pNorm_unmix(A, b, *kwargs)
+	```    
     - A : numpy ndarray of size MxN. each column of A is an endmember spectra
         M is number of spectral channels, N is number of endmembers
     - b : numpy ndarray of size M that represents a mixture spectra to be unmixed
@@ -70,12 +72,15 @@ _____________________________________________________________
 Instructions to reproduce experiment:
 1. clone git hub repo:
 	
-	- git clone https://github.com/johnjaniczek/SFCLS.git
-
-2. Install dependencies OR use provided virtual environment
+	```
+	git clone https://github.com/johnjaniczek/SFCLS.git
+	```
 	
-	- pip install spectral numpy scipy pandas sklearn matplotlib feather-format h5py
-
+2. Install dependencies OR use provided virtual environment
+	```
+	pip install spectral numpy scipy pandas sklearn matplotlib feather-format h5py
+	```
+	
 3. Run test scripts to verify unmixing algorithms are functioning:
 	
 	- test_FCLS.py
